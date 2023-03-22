@@ -1,10 +1,11 @@
 import React, {useState} from 'react'
 import {Button, Label, TextInput} from 'flowbite-react'
+import AutenticacaoService from "../services/AutenticacaoService";
 
 const Login = () => {
 
     const [user, setUser] = useState({
-        email: '',
+        username: '',
         senha: ''
     });
 
@@ -18,9 +19,13 @@ const Login = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
+            AutenticacaoService.login(user).then(
+                response => {
+                    console.log(response);
+                }
+            );
+        } catch (e) {
             console.log(e);
-        } catch (error) {
-            console.log(error);
         }
     }
 
@@ -30,16 +35,16 @@ const Login = () => {
                 <div>
                     <div className="mb-2 block">
                         <Label
-                            htmlFor="email"
-                            value="E-mail"
+                            htmlFor="username"
+                            value="username"
                         />
                     </div>
                     <TextInput
-                        id="email"
-                        type="email"
+                        id="username"
+                        type="username"
                         placeholder="usuario@dominio.com"
-                        name='email'
-                        value={user.email}
+                        name='username'
+                        value={user.username}
                         required={true}
                         onChange={atualizarUsuario}
                     />
