@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "https://localhost:8443/editoraLivros/login";
+const url = "http://localhost:8443/editoraLivros/login";
 
 class AutenticacaoService {
     login(user) {

@@ -68,7 +68,7 @@ const Login = () => {
                 <Button type="submit">
                     Login
                 </Button>
-                <Button href={"https://localhost:8443/oauth2/authorization/google"}>
+                <Button href={"http://localhost:8443/oauth2/authorization/google"}>
                     Google
                 </Button>
             </form>
